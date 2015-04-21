@@ -11,7 +11,7 @@
                 <h1>
                     Oops!</h1>
                 <h2>
-                    404 Internal Server Error</h2>
+                    500 Internal Server Error</h2>
                 <div class="error-details">
                     Sorry, an error has occured, Internal Server Error!
                 </div>
