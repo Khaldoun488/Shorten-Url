@@ -6,6 +6,21 @@ require_once('config.php');
 use Core\Container\ContainerBuilder;
 
 use Symfony\Component\HttpFoundation\Request;
+use Whoops\Run;
+
+//init smarty
+$smarty = new Smarty();
+
+//handle errors
+$run     = new Run();
+
+$run->pushHandler(function($e)
+{
+    global $smarty;
+    $smarty->display('error.tpl');
+});
+
+$run->register();
 
 //build container
 $containerBuilder = new ContainerBuilder($parameters);
@@ -16,9 +31,6 @@ $request = Request::createFromGlobals();
 $input   = $request->query->get('long_url', null);
 
 $shortUrl = null;
-
-//init smarty
-$smarty = new Smarty();
 
 //call the service
 if ($input !== null) {
