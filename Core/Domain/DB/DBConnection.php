@@ -3,7 +3,6 @@
 namespace Core\Domain\DB;
 
 use Core\Domain\DB\DBConnectionInterface;
-
 use \PDO;
 
 /**

@@ -4,7 +4,6 @@ namespace Core\Services;
 
 use Core\Domain\Entity\UrlMatchModel;
 use Core\Domain\Repository\UrlMatchModelRepository;
-
 use Mremi\UrlShortener\Model\Link;
 use Mremi\UrlShortener\Provider\Bitly\BitlyProvider;
 use Mremi\UrlShortener\Provider\Bitly\OAuthClient;

@@ -6,7 +6,6 @@ use Core\Domain\DB\DBConnection;
 use Core\Domain\Manager\UrlMatchModelManager;
 use Core\Domain\Repository\UrlMatchModelRepository;
 use Core\Services\ShortenUrlService;
-
 use Pimple\Container;
 
 /**

@@ -3,7 +3,6 @@
 namespace Core\Domain\DB;
 
 use Core\Domain\DB\DBConnection;
-
 use \PDOStatement;
 use \PDO;
 
@@ -82,7 +81,7 @@ abstract class DBManager implements DBManagerInterface
     {
         if (!$this->connectionEstablished) {
             $this->bdd = $this->dbConnection->connect();
-            if($this->bdd !== null) {
+            if ($this->bdd !== null) {
                 $this->connectionEstablished = true;
             } else {
                 $this->connectionEstablished = false;

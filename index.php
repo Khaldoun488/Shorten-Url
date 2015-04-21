@@ -4,7 +4,6 @@ require_once('vendor/autoload.php');
 require_once('config.php');
 
 use Core\Container\ContainerBuilder;
-
 use Symfony\Component\HttpFoundation\Request;
 use Whoops\Run;
 
@@ -14,7 +13,7 @@ $smarty = new Smarty();
 //handle errors
 $run = new Run();
 
-$run->pushHandler(function($e) use ($smarty) {
+$run->pushHandler(function ($e) use ($smarty) {
     $smarty->display('error.tpl');
 });
 
@@ -45,4 +44,3 @@ if ($shortUrl !== null) {
 
 //render
 $smarty->display('view.tpl');
-
