@@ -74,7 +74,9 @@ abstract class DBManager implements DBManagerInterface
     }
 
     /**
-     * check connection to the db
+     * connect to the database
+     *
+     * @throws \PDOException
      */
     private function getConnection()
     {
@@ -82,6 +84,9 @@ abstract class DBManager implements DBManagerInterface
             $this->bdd = $this->dbConnection->connect();
             if($this->bdd !== null) {
                 $this->connection_established = true;
+            } else {
+                $this->connection_established = false;
+                throw new \PDOException();
             }
         }
     }
