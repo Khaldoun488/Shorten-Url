@@ -3,7 +3,8 @@
     "mremi/url-shortener": "dev-master",
     "pimple/pimple": "~3.0",
     "smarty/smarty": "~3.1",
-    "symfony/http-foundation": "~2.6"
+    "symfony/http-foundation": "~2.6",
+    "filp/whoops": "1.*"
   },
   "autoload": {
     "psr-0": {
