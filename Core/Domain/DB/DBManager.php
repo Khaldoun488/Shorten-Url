@@ -25,7 +25,7 @@ abstract class DBManager implements DBManagerInterface
     /**
      * @var boolean
      */
-    private $connection_established;
+    private $connectionEstablished;
 
     /**
      * @param DBConnection $dbConnection
@@ -40,15 +40,15 @@ abstract class DBManager implements DBManagerInterface
      */
     public function isConnectionEstablished()
     {
-        return $this->connection_established;
+        return $this->connectionEstablished;
     }
 
     /**
-     * @param boolean $connection_established
+     * @param boolean $connectionEstablished
      */
-    public function setConnectionEstablished($connection_established)
+    public function setConnectionEstablished($connectionEstablished)
     {
-        $this->connection_established = $connection_established;
+        $this->connectionEstablished = $connectionEstablished;
     }
 
     /**
@@ -80,12 +80,12 @@ abstract class DBManager implements DBManagerInterface
      */
     private function getConnection()
     {
-        if (!$this->connection_established) {
+        if (!$this->connectionEstablished) {
             $this->bdd = $this->dbConnection->connect();
             if($this->bdd !== null) {
-                $this->connection_established = true;
+                $this->connectionEstablished = true;
             } else {
-                $this->connection_established = false;
+                $this->connectionEstablished = false;
                 throw new \PDOException();
             }
         }

@@ -12,11 +12,9 @@ use Whoops\Run;
 $smarty = new Smarty();
 
 //handle errors
-$run     = new Run();
+$run = new Run();
 
-$run->pushHandler(function($e)
-{
-    global $smarty;
+$run->pushHandler(function($e) use ($smarty) {
     $smarty->display('error.tpl');
 });
 
