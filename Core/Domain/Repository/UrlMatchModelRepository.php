@@ -20,7 +20,7 @@ class UrlMatchModelRepository
      */
     public function __construct(UrlMatchModelManager $urlMatchModelManager)
     {
-        $this->dbManager = $urlMatchModelManager;
+        $this->urlMatchModelManager = $urlMatchModelManager;
     }
 
     /**
@@ -30,7 +30,7 @@ class UrlMatchModelRepository
      */
     public function findFromLongUrl($longUrl)
     {
-        $result = $this->dbManager->findOne("SELECT * FROM url_match WHERE long_url = '" . $longUrl . "' LIMIT 1");
+        $result = $this->urlMatchModelManager->findOne("SELECT * FROM url_match WHERE long_url = '" . $longUrl . "' LIMIT 1");
 
         return $result;
     }
@@ -40,6 +40,6 @@ class UrlMatchModelRepository
      */
     public function saveMatchedUrl($model)
     {
-        $this->dbManager->save("INSERT INTO url_match SET short_url = '".$model->getShortUrl()."', long_url = '".$model->getLongUrl()."'");
+        $this->urlMatchModelManager->save("INSERT INTO url_match SET short_url = '".$model->getShortUrl()."', long_url = '".$model->getLongUrl()."'");
     }
 }

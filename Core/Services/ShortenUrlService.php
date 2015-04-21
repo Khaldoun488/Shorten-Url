@@ -40,6 +40,8 @@ class ShortenUrlService
     }
 
     /**
+     * Return a short url and cache the result in DB
+     *
      * @param string $longUrl
      *
      * @return string
@@ -64,6 +66,8 @@ class ShortenUrlService
     }
 
     /**
+     * Cache short url in DB
+     *
      * @param string $shortUrl
      * @param string $longUrl
      */
@@ -77,6 +81,8 @@ class ShortenUrlService
     }
 
     /**
+     * Call the Bitly API to provide the short url
+     *
      * @param string $longUrl
      *
      * @return string

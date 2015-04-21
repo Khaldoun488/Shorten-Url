@@ -50,14 +50,9 @@ class DBConnection implements DBConnectionInterface
      */
     public function connect()
     {
-        try {
             $bdd = new \PDO('mysql:host='.$this->dbAddress.';dbname='.$this->dbName.';charset=utf8', $this->dbUser, $this->dbPwd, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
             $bdd->query("SET NAMES UTF8");
 
             return $bdd;
-        } catch (\PDOException $e) {
-            echo $e->getMessage();
-            return null;
-        }
     }
 }

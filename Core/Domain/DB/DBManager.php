@@ -80,7 +80,9 @@ abstract class DBManager implements DBManagerInterface
     {
         if (!$this->connection_established) {
             $this->bdd = $this->dbConnection->connect();
-            $this->connection_established = true;
+            if($this->bdd !== null) {
+                $this->connection_established = true;
+            }
         }
     }
 }

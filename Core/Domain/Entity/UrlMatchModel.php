@@ -18,13 +18,6 @@ class UrlMatchModel
     private $shortUrl;
 
     /**
-     * @inheritdoc
-     */
-    public function __construct()
-    {
-    }
-
-    /**
      * @return string
      */
     public function getLongUrl()

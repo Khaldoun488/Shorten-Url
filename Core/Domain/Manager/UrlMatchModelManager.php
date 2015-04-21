@@ -11,13 +11,13 @@ use Core\Domain\Entity\UrlMatchModel;
 class UrlMatchModelManager extends DBManager
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function findOne($query)
     {
         $result = parent::findOne($query);
 
-        if ($result) {
+        if ($result && is_array($result)) {
             $model = new UrlMatchModel();
             $model->setLongUrl($result['long_url']);
             $model->setShortUrl($result['short_url']);
