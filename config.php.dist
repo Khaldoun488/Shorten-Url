@@ -1,0 +1,9 @@
+<?php
+
+$parameters = array(
+    'db-address'   => 'XXXXXXXXXX',
+    'db-name'     => 'XXXXXXXXXX',
+    'db-user'     => 'XXXXXXXXXX',
+    'db-pwd'      => 'XXXXXXXXXX',
+    'login-bitly' => 'XXXXXXXXXX',
+    'pwd-bitly'   => 'XXXXXXXXXX');
